@@ -4,7 +4,42 @@ const app = express();
 
 app.get("/", (req, res, next)=> {
     res.json({
-        message: "Did you GET IT!!"
+        message: "Using GET /",
+        metadata: {
+            host: req.hostname,
+            port: process.env.port,
+            method: req.method
+        }
+    });
+})
+app.post("/", (req, res, next)=> {
+    res.json({
+        message: "Using post /",
+        metadata: {
+            host: req.hostname,
+            port: process.env.port,
+            method: req.method
+        }
+    });
+})
+app.patch("/", (req, res, next)=> {
+    res.json({
+        message: "Using patch /",
+        metadata: {
+            host: req.hostname,
+            port: process.env.port,
+            method: req.method
+        }
+    });
+})
+app.delete("/", (req, res, next)=> {
+    res.json({
+        message: "Using delete /",
+        metadata: {
+            host: req.hostname,
+            port: process.env.port,
+            method: req.method
+        }
     });
 })
 
